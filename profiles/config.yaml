@@ -1,0 +1,36 @@
+IoT.Config:
+  MessageTemplates: #名词解释：<00> 基站 ;<01> 终端标签 ;<02> sequence ;<03>终端id ;<04> crc; <05> 工作模式 00为睡眠 01为正常工作;<06> 数据值;
+    BaseStationHeartbeat: '3E0CE0<00><00><04>3F'    #基站心跳模板
+    ActionRequest: '3E0F22<00><01><02>02<03><04>3F' #Action请求模板
+    TaggedHeartbeat: '3E0D24<00><01><05><04>3F'       #标签心跳模板
+    TagData: '3E1127<00><01><02><06><04>3F'     #标签数据模板
+    TagEvent: '3E<07>25<00><01><02><08><04>3F' #标签事件数据    <07>: 包长度;<08>: Event+Data
+    ResponseGetServer: '3E<07>28<00><01>00<09><04>3F' #参数获取返回 <09>:获取参数的内容
+    ResponseSetServer: '3E0D29<00><01><09><04>3F' #终端参数设置返回
+    HairMedicine: '3E0D2A<00><01><09><04>3F'   #下达用药数据返回
+    #0基站心跳，1标签心跳，2action请求，3标签数据，4事件数据，5获取参数返回，6设置参数返回，7下达用药返回
+  Infusion:
+    Size:
+      '01': 50
+      '02': 100
+      '03': 150
+      '04': 250
+      '05': 500
+      '06': 1000
+      '07': 200
+    Event: #事件
+      ['01','02','04','10']
+    Type: #类型
+      ['01','02','30']
+    Dripspeed: #滴速范围
+      [30,90]
+    Endml: #输液结束容量
+      5
+  Temperature: #体温
+    Temperaturerange: [32,43]
+  Coldchain: #冷链
+    One-pieceColdChain: #一体冷链
+      humidity: [0,100] #湿度
+      temperature: [-20,20] #温度
+    ProbeTypeColdChain: #探针冷链
+      temperature: [0,255] #温度
