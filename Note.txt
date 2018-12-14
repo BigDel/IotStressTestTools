@@ -1,0 +1,10 @@
+Folder
+    base:基础文件
+    profiles: 配置文件
+    service: 服务主要文件
+    units : 工具类
+    views : 访问类
+files
+application.py  :application文件
+config.py  : 部分配置文件
+start.py   :启动文件
