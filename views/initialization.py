@@ -5,7 +5,7 @@
 del
 客户端初始化类
 """
-
+from tornado.escape import json_decode
 from tornado.web import RequestHandler
 import views
 import service
@@ -34,7 +34,8 @@ class InitializationHandler(RequestHandler):
         :return:返回post状态
         """
         ret = views.setting.get('return_message')
-        bs_portno = self.get_argument('MyPortNo')
+        data = json_decode(self.request.body)
+        bs_portno = data['MyPortNo']
         ip_ = self.request.remote_ip
         status, msg = service.Initialization_.init_bs(bs_portno, ip_)
         ret.update({'Status': status, 'Msg': msg})
