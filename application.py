@@ -13,13 +13,13 @@ import config
 class Application(tornado.web.Application):
     def __init__(self):
         handlers = {
-            (r"/", views.IndexHandler),
-            (r'/Test', views.TestConnectionHandler),
-            (r'/PostMyPortNo', views.InitializationHandler),
-            (r'/GetTag', views.InitializationHandler),
-            (r'/GetEvent', views.EventInfoHandler),
-            (r'/GetHb', views.HbInfoHandler),
-            (r'/GetData', views.DataInfoHandler),
-            (r'/PostData', views.DataInfoHandler),
+            (r"/", views.IndexHandler),  # 首页
+            (r'/Test', views.TestConnectionHandler),  # 测试连接
+            (r'/PostMyPortNo', views.InitializationHandler),  # 上传基站portNo
+            (r'/GetTag', views.InitializationHandler),  # 获取标签
+            (r'/GetEvent', views.EventInfoHandler),  # 获取事件
+            (r'/GetHb', views.HbInfoHandler),  # 获取心跳
+            (r'/GetData', views.DataInfoHandler),  # 获取事件
+            (r'/PostData', views.DataInfoHandler),  # 接收数据处理
         }
         super(Application, self).__init__(handlers, **config.setting)
