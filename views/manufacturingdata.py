@@ -38,6 +38,17 @@ class HbInfoHandler(RequestHandler):
 
 
 class DataInfoHandler(RequestHandler):
+
+    def get(self, *args, **kwargs):
+        ret = views.setting.get('return_message')
+        myPortNo = self.get_argument('myPortNo', None)
+        tagPortNo = self.get_argument('tagPortNo', None)
+        dataType = int(self.get_argument('dataType', None))
+        parameters = {'myPortNo': myPortNo, 'tagPortNo': tagPortNo}
+        status, msg = service.MadeData.selct_template(dataType, parameters)
+        ret.update({'Status': status, 'Msg': msg, 'Tags': None})
+        self.write(ret)
+
     def post(self, *args, **kwargs):
         ret = views.setting.get('return_message')
         data = json_decode(self.request.body)
