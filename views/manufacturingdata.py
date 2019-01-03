@@ -38,7 +38,7 @@ class HbInfoHandler(RequestHandler):
 
 
 class DataInfoHandler(RequestHandler):
-    def get(self, *args, **kwargs):
+    def post(self, *args, **kwargs):
         ret = views.setting.get('return_message')
         data = json_decode(self.request.body)
         myPortNo = data.get('myPortNo', None)
