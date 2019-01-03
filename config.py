@@ -19,6 +19,6 @@ setting = {
     'static_path': os.path.join(BASE_DIRS, 'static'),
     'template_path': os.path.join(BASE_DIRS, 'templates'),
     'debug': True,
-    'return_message': {'Status': None, 'Msg': None}  # 返回数据
+    'return_message': {'Status': None, 'Msg': None, 'Tags': None}  # 返回数据
     # 'autoreload':True
 }

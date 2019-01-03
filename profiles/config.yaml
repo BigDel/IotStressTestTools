@@ -6,8 +6,8 @@ IoT.Config:
     TagData: '3E1127<00><01><02><06><04>3F'     #标签数据模板
     TagEvent: '3E<07>25<00><01><02><08><04>3F' #标签事件数据    <07>: 包长度;<08>: Event+Data
     ResponseGetServer: '3E<07>28<00><01>00<09><04>3F' #参数获取返回 <09>:获取参数的内容
-    ResponseSetServer: '3E0D29<00><01><09><04>3F' #终端参数设置返回
-    HairMedicine: '3E0D2A<00><01><09><04>3F'   #下达用药数据返回
+    ResponseSetServer: '3E0D29<00><01>00<04>3F' #终端参数设置返回
+    HairMedicine: '3E0D2A<00><01>00<04>3F'   #下达用药数据返回
     #0基站心跳，1标签心跳，2action请求，3标签数据，4事件数据，5获取参数返回，6设置参数返回，7下达用药返回
   Infusion:
     Size:

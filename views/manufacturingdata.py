@@ -19,7 +19,7 @@ class EventInfoHandler(RequestHandler):
         event_ = self.get_argument('event', None)
         parameters = {'myPortNo': myPortNo, 'tagPortNo': tagPortNo, 'event_': event_}
         status, msg = service.MadeData.selct_template(dataType, parameters)
-        ret.update({'Status': status, 'Msg': msg})
+        ret.update({'Status': status, 'Msg': msg, 'Tags': None})
         self.write(ret)
 
 
@@ -32,7 +32,7 @@ class HbInfoHandler(RequestHandler):
         modes = self.get_argument('modes', None)
         parameters = {'myPortNo': myPortNo, 'tagPortNo': tagPortNo, 'modes': modes}
         status, msg = service.MadeData.selct_template(data_type=dataType, dict_=parameters)
-        ret.update({'Status': status, 'Msg': msg})
+        ret.update({'Status': status, 'Msg': msg, 'Tags': None})
         self.write(ret)
 
 
@@ -44,5 +44,5 @@ class DataInfoHandler(RequestHandler):
         dataType = int(self.get_argument('dataType', None))
         parameters = {'myPortNo': myPortNo, 'tagPortNo': tagPortNo}
         status, msg = service.MadeData.selct_template(dataType, parameters)
-        ret.update({'Status': status, 'Msg': msg})
+        ret.update({'Status': status, 'Msg': msg, 'Tags': None})
         self.write(ret)

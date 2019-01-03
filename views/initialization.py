@@ -24,7 +24,7 @@ class InitializationHandler(RequestHandler):
         first_tag = int(self.get_argument('First'))
         type_ = self.get_argument('Type')
         status, msg = service.Initialization_.init_tag(first_tag, num, type_)
-        ret.update({'Status': status, 'Msg': msg})
+        ret.update({'Status': status, 'Tags': msg, 'Msg': None})
         self.write(ret)
 
     def post(self, *args, **kwargs):
@@ -38,5 +38,5 @@ class InitializationHandler(RequestHandler):
         bs_portno = data['MyPortNo']
         ip_ = self.request.remote_ip
         status, msg = service.Initialization_.init_bs(bs_portno, ip_)
-        ret.update({'Status': status, 'Msg': msg})
+        ret.update({'Status': status, 'Msg': msg, 'Tags': None})
         self.write(ret)
