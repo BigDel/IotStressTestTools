@@ -3,7 +3,7 @@ IoT.Config:
     BaseStationHeartbeat: '3E0CE0<00><00><04>3F'    #基站心跳模板
     ActionRequest: '3E0F22<00><01><02>02<03><04>3F' #Action请求模板
     TaggedHeartbeat: '3E0D24<00><01><05><04>3F'       #标签心跳模板
-    TagData: '3E1127<00><01><02><06><04>3F'     #标签数据模板
+    TagData: '3E<07>27<00><01><02><06><04>3F'     #标签数据模板
     TagEvent: '3E<07>25<00><01><02><08><04>3F' #标签事件数据    <07>: 包长度;<08>: Event+Data
     ResponseGetServer: '3E<07>28<00><01>00<09><04>3F' #参数获取返回 <09>:获取参数的内容
     ResponseSetServer: '3E0D29<00><01>00<04>3F' #终端参数设置返回

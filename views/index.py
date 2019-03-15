@@ -10,9 +10,8 @@ import views
 
 
 class IndexHandler(RequestHandler):
-
     def get(self, *args, **kwargs):
-        self.write('暂无首页')
+        self.write("暂无主页")
 
 
 class TestConnectionHandler(RequestHandler):

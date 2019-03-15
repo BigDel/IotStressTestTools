@@ -20,4 +20,5 @@ if __name__ == "__main__":
     httpServer.bind(config.options['port'])
     # 开启5个子进程（默认1，若为None或者小于0，开启对应硬件的CPU核心数个子进程）
     httpServer.start(1)
+    print('启动成功！！！ http://localhost:{}'.format(config.options['port']))
     tornado.ioloop.IOLoop.current().start()

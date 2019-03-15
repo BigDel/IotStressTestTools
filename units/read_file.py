@@ -13,7 +13,7 @@ import yaml
 class ReadConfigs(object):
     config_file = os.path.abspath(os.path.dirname(os.path.dirname(__file__))) + '/profiles/config.yaml'
     if os.path.isfile(config_file):
-        configs = yaml.load(open(config_file, 'r', encoding='UTF-8'))
+        configs = yaml.safe_load(open(config_file, 'r', encoding='UTF-8'))
 
     @classmethod
     def get(cls, head='IoT.Config', key=None):
